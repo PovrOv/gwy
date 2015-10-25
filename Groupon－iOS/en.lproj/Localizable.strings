@@ -1,0 +1,181 @@
+/* 
+  Localizable.strings
+  GoldenLeaf
+
+  Created by Sissi Chen  on 3/18/15.
+  Copyright (c) 2015 Sissi Chen . All rights reserved.
+*/
+
+/* Localized versions of Info.plist keys */
+"GOLDEN_LEAF_SOFTWARE_STR"              =       "金秋绽放";
+
+"REGISTRATION_PAGE_TITLE"           =       "请您注册登录";
+"REGISTRATION_USERID"               =       "用户名";
+"REGISTRATION_PASSWORD1"            =       "密码";
+"REGISTRATION_PASSWORD2"            =       "密码重复";
+"REGISTRATION_BIRTHDATE"            =       "出生年月";
+"REGISTRATION_LOCATION"             =       "所在地";
+
+"LOGIN_PAGE_TITLE"                  =       "请您登录";
+"LOGIN_USERID"                      =       "用户名";
+"LOGIN_PASSWORD"                    =       "密码";
+
+/* Dashboard Strings */
+"DASHBOARD_PAGE_TITLE_STR"                  =   "Dashboard";
+"DASHBOARD_BULLETIN_BOARD_LABEL_STR"        =   "公告板";
+"DASHBOARD_HEALTH_DIARY_LABEL_STR"          =   "我的健康日记";
+"DASHBOARD_TIPS_LABEL_STR"                  =   "小贴士";
+
+/* Error Validation Messages */
+
+/* Login failed.  Username or password didn't match */
+"ERROR_MSG_LOGIN_FAILED"        =       "Username/password not found";
+
+/* No comment provided by engineer. */
+"REGISTRATION_PAGE_TITLE"       =       "Registration";
+
+/* User has not selected a birthdate */
+"VALIDATION_MSG_BIRTHDATE_NOT_SELECTED" = "Please Enter Your Birthdate";
+
+/* No location has been set */
+"VALIDATION_MSG_LOCATION_EMPTY" =       "Please Enter In Your Location";
+
+/* Password failed validation */
+"VALIDATION_MSG_PASSWORD_FAILED" =      "Please ensure that you have at least one lower case letter, one upper case letter, one digit and one special character.";
+
+/* Passwords do not match */
+"VALIDATION_MSG_PASSWORDS_NOT_MATCH" =  "Passwords do not match.  Please try again.";
+
+/* username does not pass validation */
+"VALIDATION_MSG_USERNAME" = "Please make sure that you have at least 6 characters for your username.";
+
+/* Self Diagnosis Strings */
+"SELF_DIAGNOSIS_STR"    =   "自我诊断";
+"CONTINUE_TO_NEXT_SELF_DIAGNOSIS_STR"   = "您的月经不正常。请继续以下自我诊断";
+"START_DIAGNOSIS_MESSAGE1"              =  "您的月经不正常";
+"START_DIAGNOSIS_MESSAGE2"              =  "如果您的年龄为40岁以下，您的测试结果为月经紊乱。\n\n如果您的年龄在40岁以上，您的测试结果为更年期。\n\n如果您已经有一年以上不来月经，您已经进入到绝经期。\n\n以上为初步判断。\n\n建议您参考《更年期门诊》栏目，尽快就医做相应检查。同时可以参考《医生告诉您》栏目中的《更年须知》做好自我保健";
+"CONTINUE_TO_SELF_DIAGNOSIS_STR"        = "持续的自我诊断";
+"NORMAL_STR"            = "您月经正常";
+"MONTH_STR"             = "月";
+"DAY_STR"               = "日";
+"YES" = "是";
+"NO"  = "否";
+"OK_STR"                = "是";
+"SUBMIT_STR"            = "提交";
+
+"NORMAL_STATE_MSG_STR"  = "";
+
+/*localization for Menses Status Q/A */
+"QUESTION_MENSES_001" = "是否有两个月来一次月经:";
+
+"QUESTION_MENSES_002" = "请告知您前三个月月经日期";
+"MENSES_LAST_MONTH" = "上月";
+"MENSES_TWO_MONTHS_AGO" = "两个月前";
+"MENSES_THREE_MONTHS_AGO" = "三个月前";
+
+/*localization for Q/A */
+/* Question  1 - Hectic Fever and Sweating */
+"QUESTION_001" = "1. 您是否潮热出汗？";
+"ANSWER_001-01" = "无";
+"ANSWER_001-02" = "少于3次 / 日";
+"ANSWER_001-03" = "3 - 9次 / 日";
+"ANSWER_001-04" = "大于等于10次 / 日";
+
+/* Question  2 - Insomnia */
+"QUESTION_002" = "2. 您是否失眠？";
+"ANSWER_002-01" = "无";
+"ANSWER_002-02" = "偶尔";
+"ANSWER_002-03" = "经常用安眠药";
+"ANSWER_002-04" = "影响工作生活";
+
+/* Question  3 - Irritability */
+"QUESTION_003" = "3. 您是否烦躁易怒？";
+"ANSWER_003-01" = "无";
+"ANSWER_003-02" = "偶尔";
+"ANSWER_003-03" = "经常, 但能控制";
+"ANSWER_003-04" = "经常, 不能控制";
+
+/* Question  4 - Depression*/
+"QUESTION_004" = "4. 您是否扰郁？";
+"ANSWER_004-01" = "无";
+"ANSWER_004-02" = "偶尔";
+"ANSWER_004-03" = "经常, 但能克制";
+"ANSWER_004-04" = "失去生活信念";
+
+/* Question  5 - Sexual Intercourse Pain */
+"QUESTION_005" = "5. 您是否有性交痛？";
+"ANSWER_005-01" = "无";
+"ANSWER_005-02" = "偶尔";
+"ANSWER_005-03" = "性交痛";
+"ANSWER_005-04" = "性欲丧失";
+
+/* Question  6 - Bone and Joint Pain */
+"QUESTION_006" = "6. 您是否有骨关节痛？";
+"ANSWER_006-01" = "无";
+"ANSWER_006-02" = "偶尔";
+"ANSWER_006-03" = "经常, 但不影响功能";
+"ANSWER_006-04" = "功能障碍";
+
+/* Question  7 - Vertigo */
+"QUESTION_007" = "7. 您是否有眩晕？";
+"ANSWER_007-01" = "无";
+"ANSWER_007-02" = "偶尔";
+"ANSWER_007-03" = "经常, 但不影响生活";
+"ANSWER_007-04" = "影响日常生活";
+
+/* Question  8 - Fatigue */
+"QUESTION_008" = "8. 您是否感觉乏力？";
+"ANSWER_008-01" = "无";
+"ANSWER_008-02" = "偶尔";
+"ANSWER_008-03" = "上四楼困难";
+"ANSWER_008-04" = "影响日常生活";
+
+/* Question  9 - Headache */
+"QUESTION_009" = "9. 您是否有头痛？";
+"ANSWER_009-01" = "无";
+"ANSWER_009-02" = "偶尔";
+"ANSWER_009-03" = "经常，但能忍受";
+"ANSWER_009-04" = "需治疗.";
+
+/* Question  10 - Skin Mosquito, line feeling */
+"QUESTION_010" = "10. 您是否有皮肤蚊行感？";
+"ANSWER_010-01" = "无";
+"ANSWER_010-02" = "偶尔";
+"ANSWER_010-03" = "经常，但能忍受";
+"ANSWER_010-04" = "需治疗";
+
+/* Question  11 - Urinary Symptoms */
+"QUESTION_011" = "11. 您是否有泌尿系统症状？";
+"ANSWER_011-01" = "无";
+"ANSWER_011-02" = "偶尔";
+"ANSWER_011-03" = "多于3次/年";
+"ANSWER_011-04" = "多于1次/月";
+
+/* Question  12 - Palpitation */
+"QUESTION_012" = "12. 您是否心悸？";
+"ANSWER_012-01" = "无";
+"ANSWER_012-02" = "偶尔";
+"ANSWER_012-03" = "经常，但不影响生活";
+"ANSWER_012-04" = "需治疗";
+
+
+/* Diagnosis Results */
+"DIAGNOSIS_RESULTS_Healthy"        =   "健康状态";
+"DIAGNOSIS_RESULTS_MILD_STR"        =   "轻度";
+"DIAGNOSIS_RESULTS_MODERATE_STR"    =   "中度";
+"DIAGNOSIS_RESULTS_SEVERE_STR"      =   "重度";
+
+/* Diagnosis Course of Action */
+
+"DIAGNOSIS_ACTION_Healthy"         =  "您目前的测试结果尚属正常。建议您定期测试。同时可以参考《医生告诉您》栏目中的《更年须知》做好自我保健";
+
+"DIAGNOSIS_ACTION_MILD_STR_NOR"         =  "虽然诊断结果为轻度，但某项指标过高。建议您参考《医生告诉您》栏目中的《更年须知》做好自我保健。必要时参考《更年期门诊》尽早就医";
+"DIAGNOSIS_ACTION_MILD_STR"         =   "建议您参考《医生告诉您》栏目中的更年须知做好自我保健";
+"DIAGNOSIS_ACTION_MODERATE_STR"     =   "建议您参考《更年期门诊》栏目，尽快就医做相应检查。同时可以参考《医生告诉您》栏目中的《更年须知》做好自我保健";
+"DIAGNOSIS_ACTION_SEVERE_STR"       =   "建议您参考《更年期门诊》栏目，尽快就医做相应检查。同时可以参考《医生告诉您》栏目中的《更年须知》做好自我保健";
+
+"WHAT_NEXT_STR"                     =   "知道了";
+
+/* Articles Section */
+
+

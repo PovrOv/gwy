@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qLp-pg-QpS" customClass="HomeCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="家电" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIE-Jg-BCd">
+                        <rect key="frame" x="58" y="14" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="PMf-o3-TW4"/>
+                            <constraint firstAttribute="width" constant="42" id="aaH-92-vv7"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.45718907828282829" green="0.45718907828282829" blue="0.45718907828282829" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="家电_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ijl-wB-8dt">
+                        <rect key="frame" x="17" y="10" width="29" height="29"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="5ff-K4-Mzg"/>
+                            <constraint firstAttribute="width" constant="29" id="d6j-0o-JBz"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Ijl-wB-8dt" firstAttribute="top" secondItem="qLp-pg-QpS" secondAttribute="top" constant="10" id="I60-zr-3x5"/>
+                <constraint firstAttribute="trailing" secondItem="VIE-Jg-BCd" secondAttribute="trailing" constant="8" id="a71-fD-6Hq"/>
+                <constraint firstItem="VIE-Jg-BCd" firstAttribute="top" secondItem="qLp-pg-QpS" secondAttribute="top" constant="14" id="jS1-k2-Zi1"/>
+                <constraint firstItem="Ijl-wB-8dt" firstAttribute="leading" secondItem="qLp-pg-QpS" secondAttribute="leading" constant="17" id="to1-Os-kaQ"/>
+            </constraints>
+            <size key="customSize" width="108" height="50"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.boderWidth">
+                    <real key="value" value="0.5"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="layer.boderColor">
+                    <color key="value" red="0.45711016414141414" green="0.45711016414141414" blue="0.45711016414141414" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="404" y="189"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="家电_icon.png" width="29" height="29"/>
+    </resources>
+</document>

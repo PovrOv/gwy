@@ -1,0 +1,56 @@
+PODS:
+  - BlocksKit (2.2.5):
+    - BlocksKit/All (= 2.2.5)
+  - BlocksKit/All (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/MessageUI (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Masonry (0.5.3)
+  - MBProgressHUD (0.9)
+  - MJExtension (2.5.9)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - Toast (2.4)
+  - TPKeyboardAvoiding (1.2.4)
+  - TTTAttributedLabel (1.10.1)
+
+DEPENDENCIES:
+  - BlocksKit (= 2.2.5)
+  - Masonry (= 0.5.3)
+  - MBProgressHUD (= 0.9)
+  - MJExtension (~> 2.5.9)
+  - ReactiveCocoa
+  - SDWebImage (~> 3.7.3)
+  - Toast (~> 2.4)
+  - TPKeyboardAvoiding (= 1.2.4)
+  - TTTAttributedLabel (= 1.10.1)
+
+SPEC CHECKSUMS:
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Masonry: 9f515466afe48632562342a40a1c224071a1a022
+  MBProgressHUD: d8e7ea388dc1549a42e0d219067cf5f2c898fb66
+  MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
+  TPKeyboardAvoiding: 0a40dfbb0af7c8bdae1dd457496dccfd217d85f6
+  TTTAttributedLabel: c8f3801a6463b9c9b82b0c84c465fdda9751892a
+
+COCOAPODS: 0.37.2

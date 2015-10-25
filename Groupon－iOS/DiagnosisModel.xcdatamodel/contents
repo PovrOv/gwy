@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Answer" representedClassName="Answer" syncable="YES">
+        <attribute name="answer_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="answer_value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="severe" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <relationship name="parent_question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers" inverseEntity="Question" syncable="YES"/>
+        <relationship name="related_question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES">
+        <attribute name="question_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="answers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Answer" inverseName="parent_question" inverseEntity="Answer" syncable="YES"/>
+        <relationship name="parent_subject" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Subject" inverseName="related_questions" inverseEntity="Subject" syncable="YES"/>
+    </entity>
+    <entity name="Subject" representedClassName="Subject" syncable="YES">
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="related_questions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Question" inverseName="parent_subject" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Answer" positionX="171" positionY="-45" width="128" height="133"/>
+        <element name="Subject" positionX="-27" positionY="153" width="128" height="88"/>
+        <element name="Question" positionX="-63" positionY="-27" width="128" height="118"/>
+    </elements>
+</model>

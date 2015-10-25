@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="6" width="320" height="192"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NqL-jN-eM2">
+                    <rect key="frame" x="0.0" y="-376" width="320" height="568"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SU-KS-Hm9">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="192"/>
+                    <subviews>
+                        <datePicker tag="998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Tu-HF-XaR">
+                            <rect key="frame" x="0.0" y="30" width="320" height="162"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="162" id="uss-mK-S80"/>
+                            </constraints>
+                            <date key="date" timeIntervalSinceReferenceDate="464309262.98693901">
+                                <!--2015-09-18 22:47:42 +0000-->
+                            </date>
+                        </datePicker>
+                        <label opaque="NO" userInteractionEnabled="NO" tag="999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第一次服药时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-E7-Ix5">
+                            <rect key="frame" x="0.0" y="0.0" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Jiz-m3-iud"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="nVd-E7-Ix5" firstAttribute="leading" secondItem="3SU-KS-Hm9" secondAttribute="leading" id="0ik-3w-5HH"/>
+                        <constraint firstAttribute="trailing" secondItem="nVd-E7-Ix5" secondAttribute="trailing" constant="16" id="0uE-ds-F71"/>
+                        <constraint firstAttribute="bottom" secondItem="3Tu-HF-XaR" secondAttribute="bottom" id="F8J-iE-Js2"/>
+                        <constraint firstItem="nVd-E7-Ix5" firstAttribute="top" secondItem="3SU-KS-Hm9" secondAttribute="top" id="GTN-8j-rM4"/>
+                        <constraint firstAttribute="height" constant="192" id="M3h-v1-LMJ"/>
+                        <constraint firstAttribute="trailing" secondItem="3Tu-HF-XaR" secondAttribute="trailing" id="p6l-3w-aZK"/>
+                        <constraint firstItem="3Tu-HF-XaR" firstAttribute="leading" secondItem="3SU-KS-Hm9" secondAttribute="leading" id="zis-SM-rIg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NqL-jN-eM2" secondAttribute="bottom" id="3ic-tD-qa4"/>
+                <constraint firstItem="NqL-jN-eM2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ja6-1K-65U"/>
+                <constraint firstAttribute="bottom" secondItem="3SU-KS-Hm9" secondAttribute="bottom" id="KvP-rV-dG0"/>
+                <constraint firstItem="3SU-KS-Hm9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SJD-Yp-G7c"/>
+                <constraint firstAttribute="trailing" secondItem="NqL-jN-eM2" secondAttribute="trailing" id="UJk-9B-bks"/>
+                <constraint firstItem="NqL-jN-eM2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cRw-bK-RT1"/>
+                <constraint firstAttribute="trailing" secondItem="3SU-KS-Hm9" secondAttribute="trailing" id="cpF-ir-o2s"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="238" y="263"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

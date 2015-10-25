@@ -1,0 +1,102 @@
+//
+//  Groupon.pch
+//  GoldenLeaf_iOS
+//
+//  Created by lixiaohu on 15/7/29.
+//  Copyright (c) 2015年 lixiaohu. All rights reserved.
+//
+
+#ifndef Groupon_iOS_Groupon_pch
+#define Groupon_iOS_Groupon_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "UIImage+Common.h"
+#import "UIColor+expanded.h"
+#import "UIImageView+WebCache.h"
+#import "BaseTableViewCell.h"
+#import "Masonry.h"
+#import "TTTAttributedLabel.h"
+#import "UITableView+Common.h"
+#import "UIImageView+WebCache.h"
+#import <ReactiveCocoa.h>
+#import "GoldenLeafNetworkAPIManager.h"
+//#import "iCarousel.h"
+//#import "XTSegmentControl.h"
+
+//#import "SVRootScrollView.h"
+#import "UIBarButtonItem+Common.h"
+#import "FMActionSheet.h"
+#include "ImagePlayerView.h"
+#import "User.h"
+#import "APIUrl.h"
+#import "NSString+UTC.h"
+#import "ChangeTextInfoProtocol.h"
+#import "NSString+height.h"
+#import "UIView+Toast.h"
+#import "NSObject+Safe.h"
+#endif
+
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+//常用变量
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
+
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+
+#define kHigher_iOS_6_1 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1)
+#define kHigher_iOS_6_1_DIS(_X_) ([[NSNumber numberWithBool:kHigher_iOS_6_1] intValue] * _X_)
+#define kNotHigher_iOS_6_1_DIS(_X_) (-([[NSNumber numberWithBool:kHigher_iOS_6_1] intValue]-1) * _X_)
+
+#define kDevice_Is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+#define kPaddingLeftWidth 15.0
+#define kLoginPaddingLeftWidth 18.0
+#define kMySegmentControl_Height 44.0
+#define kMySegmentControlIcon_Height 70.0
+
+#define  kBackButtonFontSize 16
+#define  kNavTitleFontSize 19
+#define  kBadgeTipStr @"badgeTip"
+
+#define kDefaultLastId [NSNumber numberWithInteger:99999999]
+
+#define kColor999 [UIColor colorWithHexString:@"0x999999"]
+#define kColorTableBG [UIColor colorWithHexString:@"0xfafafa"]
+#define kColorTableSectionBg [UIColor colorWithHexString:@"0xe5e5e5"]
+
+#define kImage999 [UIImage imageWithColor:kColor999]
+
+#define kPlaceholderMonkeyRoundWidth(_width_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_monkey_round_%.0f", _width_]]
+#define kPlaceholderMonkeyRoundView(_view_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_monkey_round_%.0f", CGRectGetWidth(_view_.frame)]]
+
+#define kPlaceholderCodingSquareWidth(_width_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_coding_square_%.0f", _width_]]
+#define kPlaceholderCodingSquareView(_view_) [UIImage imageNamed:[NSString stringWithFormat:@"placeholder_coding_square_%.0f", CGRectGetWidth(_view_.frame)]]
+
+#define kScaleFrom_iPhone5_Desgin(_X_) (_X_ * (kScreen_Width/320))
+
+#define kUnReadKey_messages @"messages"
+#define kUnReadKey_notifications @"notifications"
+#define kUnReadKey_project_update_count @"project_update_count"
+#define kUnReadKey_notification_AT @"notification_at"
+#define kUnReadKey_notification_Comment @"notification_comment"
+#define kUnReadKey_notification_System @"notification_system"
+
+#define rgb(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f]
+#define rgba(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+
+static NSString *const KUpdateweatherNotification = @"KUpdateweatherNotification";
+static NSString *const KLoginNotification = @"KLoginNotification";
