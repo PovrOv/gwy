@@ -30,7 +30,7 @@
 //    _contentLabel.backgroundColor = [UIColor redColor];
     _contentLabel.numberOfLines = 3;
     [_bgView insertSubview:_contentLabel atIndex:0];
-//    [self animation];
+    [self animation];
     
     
 }

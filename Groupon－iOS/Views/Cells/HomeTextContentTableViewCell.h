@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UILabel *contentLabel;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, weak) id<cellDidClickedDelegate> delegate;
-//- (void)animation;
+- (void)animation;
 
 - (instancetype)cellWithTableView:(UITableView *)tableView;
 @end
