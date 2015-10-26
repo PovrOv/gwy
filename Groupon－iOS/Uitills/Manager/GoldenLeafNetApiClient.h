@@ -15,6 +15,7 @@ typedef enum : NSUInteger {
     POST,
     PUT,
     DELETE,
+    CREATE,
     UPDATE
 } NetworkMethod;
 

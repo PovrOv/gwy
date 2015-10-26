@@ -230,6 +230,12 @@
 }
 
 - (void)configureTipLabel{
+    if (![[User shareUser].type isEqualToString:@"user"]) {
+        _bgView.hidden = YES;
+    }else{
+        _bgView.hidden = NO;
+    }
+    
     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"remind.plist"];
     NSString *tipStr, *timeStr;
     NSArray *arrayM = [[NSMutableArray alloc] initWithContentsOfFile:path];

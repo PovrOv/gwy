@@ -79,4 +79,6 @@
 - (void)request_createRemindWithParams:(NSMutableDictionary *)params andBlock:(void (^)(id, NSError *))block;
 
 - (void)request_updateRemindWithParams:(NSMutableDictionary *)params withReminder_id:(long)Rid andBlock:(void (^)(id, NSError *))block;
+
+- (void)request_deleteRemindWithReminder_id:(long)Rid andBlock:(void (^)(id, NSError *))block;
 @end

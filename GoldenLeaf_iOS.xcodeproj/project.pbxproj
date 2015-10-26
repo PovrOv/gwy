@@ -1470,7 +1470,7 @@
 				TargetAttributes = {
 					2FF2600B1B681B3C0088843D = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = J7JSRSE85C;
+						DevelopmentTeam = MTYNGM5Z9A;
 					};
 				};
 			};
@@ -1910,7 +1910,7 @@
 				INFOPLIST_FILE = "Groupon－iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lee.gwy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goldenleaf.demoappv1;
 				PRODUCT_NAME = GoldenLeaf_iOS;
 			};
 			name = Debug;
@@ -1925,7 +1925,7 @@
 				INFOPLIST_FILE = "Groupon－iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lee.gwy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goldenleaf.demoappv1;
 				PRODUCT_NAME = GoldenLeaf_iOS;
 			};
 			name = Release;

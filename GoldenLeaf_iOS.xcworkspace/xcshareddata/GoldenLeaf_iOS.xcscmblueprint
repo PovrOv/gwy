@@ -1,15 +1,18 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C38E6A27F438A2602977DD975052F31542FBB413",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : 0
+    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : 0,
+    "C38E6A27F438A2602977DD975052F31542FBB413" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7E035B8B-4903-4B42-88F9-8A250334E46F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : "gwy-master\/Groupon%EF%BC%8DiOS\/Library\/Security\/"
+    "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670" : "gwy-master\/Groupon%EF%BC%8DiOS\/Library\/Security\/",
+    "C38E6A27F438A2602977DD975052F31542FBB413" : "gwy-master\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "GoldenLeaf_iOS",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -19,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/10.20.0.15\/project\/cn\/ChiefSign",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8fb29d72-f352-44e4-b356-548a4d6ac5c3++6670"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lixiaohu1990\/gwy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C38E6A27F438A2602977DD975052F31542FBB413"
     }
   ]
 }

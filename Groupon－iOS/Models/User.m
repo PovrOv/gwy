@@ -126,7 +126,7 @@ static NSString *const KPassWord = @"KPassWord";
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"token"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     self.userImageData = nil;
-    self.user_name = @"未登录";
+    self.user_name = @"";
     self.token = @"";
     self.userID = nil;
     [self saveToDisk];

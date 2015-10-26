@@ -10,6 +10,7 @@
 #import "RemindMedicineAndPadNameViewController.h"
 #import "FMActionSheet.h"
 #import "TimePickerView.h"
+#import "MBProgressHUD.h"
 @interface RemindInputViewController ()<RemindProtocol, FMActionSheetDelegate, TimePickerViewDelegate, UITextFieldDelegate>{
     NSInteger _medicineTimes;
     NSInteger _padTimes;
@@ -113,7 +114,7 @@
     if ([[medDic allKeys] containsObject:@"medicine"]) {
         if ([medDic[@"time"] hadSetted]) {
             updateMedician = YES;
-            medicianID = [medDic[@"id"] integerValue];
+            medicianID = [medDic[@"id"] longValue];
             
         }else{
             updateMedician = NO;
@@ -123,7 +124,8 @@
     if ([[padDic allKeys] containsObject:@"pad"]) {
         if ([padDic[@"time"] hadSetted]) {
             updatePad = YES;
-           padID = [medDic[@"id"] integerValue];
+            NSLog(@"%ld", [padDic[@"id"] longValue]);
+           padID = [padDic[@"id"] longValue];
         }else{
             updatePad = NO;
         }
@@ -134,9 +136,10 @@
         NSString *dateM = [dateDic[@"date"] countDays];
         if ([dateM isEqualToString:@"未设置"]) {
             updateDaily = NO;
-           dailyID = [medDic[@"id"] integerValue];
+//           dailyID = [medDic[@"id"] longValue];
         }else{
             updateDaily = YES;
+            dailyID = [dateDic[@"id"] longValue];
         }
     }
     
@@ -178,22 +181,32 @@
 
 - (IBAction)send:(id)sender {
     
+//    [MBProgressHUD showHUDAddedTo:delegate.view animated:YES];
+//    _mbpgHUD.dimBackground=YES;//将当前的view至于后台
+//    [_mbpgHUD setMode:MBProgressHUDModeIndeterminate];
+//    _mbpgHUD.labelText =title;
+//    _mbpgHUD.delegate=(id)delegate;
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"提交提醒中...";
+    hud.margin = 10.f;
+//    hud.yOffset = 150.f;
+    hud.dimBackground=YES;
+    hud.removeFromSuperViewOnHide = YES;
+    
+    
     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"remind.plist"];
     NSMutableArray *array = [[NSMutableArray alloc] initWithContentsOfFile:path];
  
     
-    
-    
-    
-    
-    
-    
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[User shareUser].userID forKey:@"user_id"];
-    [dic setObject:@"y" forKey:@"daily"];
-    [dic setObject:@"y" forKey:@"weekly"];
-    
-    if (self.medthinSwitch.isOn == YES) {
+    if (self.medthinSwitch.isOn == YES && ![self.medithName.text isEqualToString:@"请输入药品名称"]) {
+        
+                NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:[User shareUser].userID forKey:@"user_id"];
+        [dic setObject:@"y" forKey:@"daily"];
+        [dic setObject:@"y" forKey:@"weekly"];
+        
         [dic setObject:@"n" forKey:@"pad"];
         [dic setObject:@"y" forKey:@"medicine"];
         [dic setObject:self.medithName.text forKey:@"medicine_name"];
@@ -214,12 +227,27 @@
             [[GoldenLeafNetworkAPIManager shareManager] request_createRemindWithParams:dic andBlock:^(id data, NSError *error) {
                 if (data) {
                     DebugLog(@"%@", data);
+                    updateMedician = YES;
                 }
             }];
         }
         
+    }else{
+        [array removeObjectAtIndex:0];
+        [array insertObject:@{@"medicine":@"请输入药品名称", @"time":@"请选择用药时间",@"times":@"请输入用药次数"} atIndex:0];
+        
+        if (medicianID > 0) {
+            [[GoldenLeafNetworkAPIManager shareManager] request_deleteRemindWithReminder_id:medicianID andBlock:^(id data, NSError *error) {
+                DebugLog(@"%@", data);
+            }];
+        }
     }
-    if(self.padSwitch.isOn == YES){
+    if(self.padSwitch.isOn == YES && ![self.padName.text isEqualToString:@"请输入药品名称"]){
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:[User shareUser].userID forKey:@"user_id"];
+        [dic setObject:@"y" forKey:@"daily"];
+        [dic setObject:@"y" forKey:@"weekly"];
+        
         [dic setObject:@"y" forKey:@"pad"];
         [dic setObject:@"n" forKey:@"medicine"];
         [dic setObject:self.padName.text forKey:@"medicine_name"];
@@ -227,7 +255,7 @@
         
         [array removeObjectAtIndex:1];
         NSArray *M = [self.padTime.text componentsSeparatedByString:@","];
-        [array insertObject:@{@"medicine":self.padName.text, @"time":self.padTime.text,@"times":@(M.count), @"id":@(padID)} atIndex:1];
+        [array insertObject:@{@"pad":self.padName.text, @"time":self.padTime.text,@"times":@(M.count), @"id":@(padID)} atIndex:1];
         
         if (updatePad) {
             [[GoldenLeafNetworkAPIManager shareManager] request_updateRemindWithParams:dic withReminder_id:padID  andBlock:^(id data, NSError *error) {
@@ -239,14 +267,33 @@
             [[GoldenLeafNetworkAPIManager shareManager] request_createRemindWithParams:dic andBlock:^(id data, NSError *error) {
                 if (data) {
                     DebugLog(@"%@", data);
+                    updatePad = YES;
                     
                 }
             }];
         }
     
+    }else{
+        [array removeObjectAtIndex:1];
+        [array insertObject:@{@"pad":@"请输入药品名称", @"time":@"请选择用药时间",@"times":@"请输入用药次数"} atIndex:1];
+        
+        if (padID > 0) {
+            [[GoldenLeafNetworkAPIManager shareManager] request_deleteRemindWithReminder_id:padID andBlock:^(id data, NSError *error) {
+                if (data) {
+                    DebugLog(@"%@", data);
+                }
+            }];
+
+        }
+        
     }
     
-    if(self.dateTextField.text.length){
+    if(self.dateTextField.text.length && ![self.dateTextField.text isEqualToString:@"请选择"]){
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:[User shareUser].userID forKey:@"user_id"];
+        [dic setObject:@"y" forKey:@"daily"];
+        [dic setObject:@"y" forKey:@"weekly"];
+        
         [dic setObject:@"n" forKey:@"pad"];
         [dic setObject:@"n" forKey:@"medicine"];
         
@@ -264,9 +311,13 @@
             [[GoldenLeafNetworkAPIManager shareManager] request_createRemindWithParams:dic andBlock:^(id data, NSError *error) {
                 if (data) {
                     DebugLog(@"%@", data);
+                    updateDaily = YES;
                 }
             }];
         }
+    }else{
+        [array removeObjectAtIndex:2];
+        [array insertObject:@{@"date":@"请选择"} atIndex:2];
     }
     [array writeToFile:path atomically:YES];
 //    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"remind.plist"];
@@ -318,6 +369,8 @@
 //    }
 //    [array writeToFile:path atomically:YES];
 //    [self.navigationController popViewControllerAnimated:YES];
+    
+    [hud hide:YES afterDelay:6];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

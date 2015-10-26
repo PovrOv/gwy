@@ -247,7 +247,7 @@
     if (array == nil) {
         array = [[NSMutableArray alloc] init];
     }
-    
+    [array removeAllObjects];
     [array insertObject:@{@"medicine":@"请输入药品名称", @"time":@"请选择用药时间",@"times":@"请输入用药次数"} atIndex:0];
     [array insertObject:@{@"pad":@"请输入药品名称", @"time":@"请选择用药时间",@"times":@"请输入用药次数"} atIndex:1];
     

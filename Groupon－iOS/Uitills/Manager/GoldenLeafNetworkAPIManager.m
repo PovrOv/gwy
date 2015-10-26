@@ -326,7 +326,7 @@
 - (void)request_createTopicWithParams:(NSMutableDictionary *)dict withData:(NSData *)dataM andBlock:(void (^)(id, NSError *))block{
     
     if ([User shareUser].topicData) {
-        [[GoldenLeafNetApiClient shareJsonClient] requestJsonDataWithPath:@"/api/v1/topics" withParams:dict withMethodType:DELETE andBlock:^(id data, NSError *error) {
+        [[GoldenLeafNetApiClient shareJsonClient] requestJsonDataWithPath:@"/api/v1/topics" withParams:dict withMethodType:CREATE andBlock:^(id data, NSError *error) {
             if (data) {
                 block(data, nil);
 //                DebugLog(@"%@", data);
@@ -416,6 +416,19 @@
     }];
 }
 
+- (void)request_deleteRemindWithReminder_id:(long)Rid andBlock:(void (^)(id, NSError *))block{
+    NSString *path = [NSString stringWithFormat:@"%@%@/reminders/%ld",@"/api/v1/users/", [User shareUser].userID,Rid];
+    [[GoldenLeafNetApiClient shareJsonClient] requestJsonDataWithPath:path withParams:nil withMethodType:DELETE andBlock:^(id data, NSError *error) {
+        if (data) {
+            block(data, nil);
+            //            DebugLog(@"%@", data);
+        }else{
+            block(nil, error);
+            //            DebugLog(@"%@", error);
+        }
+        
+    }];
+}
 
 //- (void)request_updateRemindWithParams:(NSMutableDictionary *)params andBlock:(void (^)(id, NSError *))block{
 //    NSString *path = [NSString stringWithFormat:@"%@%@/reminders",@"/api/v1/users/", [User shareUser].userID ];

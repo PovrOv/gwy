@@ -167,6 +167,21 @@ static NSString *const app_secret = @"tuangou_guizhou";
         }
             break;
         case DELETE:{
+            [self DELETE:path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                //                DebugLog(@"\n===========response===========\n%@:\n%@", path, responseObject);
+                id error = [self handleResponse:responseObject autoShowError:autoShowError];
+                if (error) {
+                    block(nil, error);
+                }else{
+                    block(responseObject, nil);
+                }
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                //                DebugLog(@"\n===========response===========\n%@:\n%@", path, error);
+                block(nil, error);
+            }];
+        }
+            break;
+        case CREATE:{
             [self POST:path parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
                 
                 NSData *dataM;
